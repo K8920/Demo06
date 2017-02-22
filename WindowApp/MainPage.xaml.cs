@@ -15,7 +15,7 @@ using Windows.UI.Xaml.Navigation;
 
 // The Blank Page item template is documented at http://go.microsoft.com/fwlink/?LinkId=402352&clcid=0x409
 
-namespace CarCalc
+namespace WindowApp
 {
     /// <summary>
     /// An empty page that can be used on its own or navigated to within a Frame.
@@ -25,22 +25,23 @@ namespace CarCalc
         public MainPage()
         {
             this.InitializeComponent();
-            // UI is ready
         }
 
-        private void trucksbutton_Click(object sender, RoutedEventArgs e)
+        private void button_Click(object sender, RoutedEventArgs e)
         {
-            int value = int.Parse(trucktextBlock.Text); //"0" ->
-            value++;
-            trucktextBlock.Text = value.ToString(); //"1" ->
-        }
+            double Value1 = double.Parse(LeveysBox.Text);
+            double Value2 = double.Parse(KorkeusBox.Text);
+            double Value3 = double.Parse(KarmipuuLeveysBox.Text);
 
-        private void carbutton_Click(object sender, RoutedEventArgs e)
-        {
-            int value = int.Parse(cartextBlock.Text); //"0" ->
-            value++;
-            cartextBlock.Text = value.ToString(); //"1" ->
+            double Value; //Ikkuna pinta-ala
+            double Value4; // Lasin pinta-ala
+
+            Value = (Value1 * Value2) / 10;
+            Value3 = ((Value2 * 2) + (Value1 * 2)) / 10;
+            LasiPABox.Text = Value4.ToString() + "cm^2";
+            Ipintaala.Text = Value.ToString() + "cm^2";
+            KarmiBox.Text = Value3.ToString() + "cm";
+         
         }
     }
-     
 }

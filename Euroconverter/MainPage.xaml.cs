@@ -15,7 +15,7 @@ using Windows.UI.Xaml.Navigation;
 
 // The Blank Page item template is documented at http://go.microsoft.com/fwlink/?LinkId=402352&clcid=0x409
 
-namespace CarCalc
+namespace Euroconverter
 {
     /// <summary>
     /// An empty page that can be used on its own or navigated to within a Frame.
@@ -25,22 +25,23 @@ namespace CarCalc
         public MainPage()
         {
             this.InitializeComponent();
-            // UI is ready
         }
 
-        private void trucksbutton_Click(object sender, RoutedEventArgs e)
+        private void Convertbutton_Click(object sender, RoutedEventArgs e)
         {
-            int value = int.Parse(trucktextBlock.Text); //"0" ->
-            value++;
-            trucktextBlock.Text = value.ToString(); //"1" ->
+            double value = double.Parse(EuroBox.Text);
+            double value2 = double.Parse(MarkkaBox.Text);
+            value2 = value * 6;
+            EuroBox.Text = value.ToString("0.00");
+            MarkkaBox.Text = value2.ToString("0.00");
         }
-
-        private void carbutton_Click(object sender, RoutedEventArgs e)
-        {
-            int value = int.Parse(cartextBlock.Text); //"0" ->
-            value++;
-            cartextBlock.Text = value.ToString(); //"1" ->
-        }
+      private void Convertbutton2_Click(object sender, RoutedEventArgs e)
+      {
+          double value = double.Parse(EuroBox.Text);
+          double value2 = double.Parse(MarkkaBox.Text);
+          value = value2 / 6;
+          MarkkaBox.Text = value2.ToString("0.00");
+          EuroBox.Text = value.ToString("0.00");
+      }
     }
-     
 }
